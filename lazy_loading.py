@@ -7,6 +7,8 @@ x = tf.Variable(10, name='x')
 y = tf.Variable(15, name='y')
 z = tf.add(x,y)
 
+#normal_loading
+
 with tf.Session() as sess:
     #进行全局初始化
     sess.run(tf.global_variables_initializer())
@@ -21,6 +23,8 @@ with tf.Session() as sess:
     print(tf.get_default_graph().as_graph_def())
 
     writer.close()
+
+#lazy_loading
 
 with tf.Session() as sess:
     #进行全局初始化变量
